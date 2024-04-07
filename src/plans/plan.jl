@@ -120,6 +120,7 @@ include("constrained_plan.jl")
 include("trust_regions_plan.jl")
 
 include("adabtive_regularization_with_cubics_plan.jl")
+include("homogeneous_descent_plan.jl")
 include("alternating_gradient_plan.jl")
 include("augmented_lagrangian_plan.jl")
 include("conjugate_gradient_plan.jl")

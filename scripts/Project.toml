@@ -1,0 +1,10 @@
+name = "scripts"
+uuid = "14cbaf4d-6c79-4f36-8508-7aef2da690a5"
+authors = ["C Zhang <chuwen@shanshu.ai>"]
+version = "0.1.0"
+
+[deps]
+Manifolds = "1cead3c2-87b3-11e9-0ccd-23c62b72b94e"
+ManifoldsBase = "3362f125-f0bb-47a3-aa74-596ffd7ef2fb"
+Manopt = "0fc0a36d-df90-57f3-8f93-d78a9fc72bb5"
+Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"

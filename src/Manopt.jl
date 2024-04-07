@@ -167,6 +167,9 @@ include("helpers/checks.jl")
 include("helpers/exports/Asymptote.jl")
 include("helpers/LineSearchesTypes.jl")
 include("deprecated.jl")
+# my solver
+include("solvers/homogeneous.jl")
+include("solvers/homogeneous_lanczos.jl")
 
 """
     Manopt.JuMP_Optimizer()
@@ -296,6 +299,7 @@ export AbstractGradientSolverState,
     AbstractManoptSolverState,
     AbstractPrimalDualSolverState,
     AdaptiveRegularizationState,
+    HomogeneousState,
     AlternatingGradientDescentState,
     AugmentedLagrangianMethodState,
     ConvexBundleMethodState,
@@ -309,6 +313,7 @@ export AbstractGradientSolverState,
     FrankWolfeState,
     GradientDescentState,
     LanczosState,
+    HomogeneousLanczosState,
     LevenbergMarquardtState,
     NelderMeadState,
     ParticleSwarmState,
@@ -374,6 +379,7 @@ export get_constraints,
     get_grad_equality_constraints,
     get_grad_equality_constraints!
 export ConstraintType, FunctionConstraint, VectorConstraint
+#
 # Subproblem cost/grad
 export AugmentedLagrangianCost, AugmentedLagrangianGrad, ExactPenaltyCost, ExactPenaltyGrad
 export ProximalDCCost, ProximalDCGrad, LinearizedDCCost, LinearizedDCGrad
@@ -450,7 +456,10 @@ export adaptive_regularization_with_cubics,
     truncated_conjugate_gradient_descent,
     truncated_conjugate_gradient_descent!,
     trust_regions,
-    trust_regions!
+    trust_regions!,
+    homogeneous_descent,
+    homogeneous_descent!
+
 # Solver helpers
 export decorate_state!, decorate_objective!
 export initialize_solver!, step_solver!, get_solver_result, stop_solver!
@@ -459,6 +468,7 @@ export ApproxHessianFiniteDifference, ApproxHessianSymmetricRankOne, ApproxHessi
 export update_hessian!, update_hessian_basis!
 export ExactPenaltyCost, ExactPenaltyGrad, AugmentedLagrangianCost, AugmentedLagrangianGrad
 export AdaptiveRagularizationWithCubicsModelObjective
+export HomogeneousDescentModelObjective
 export ExactPenaltyCost, ExactPenaltyGrad
 export SmoothingTechnique, LinearQuadraticHuber, LogarithmicSumOfExponentials
 #
